@@ -9,4 +9,11 @@ function getUptime() {
     console.log('Uptime: ' + uptimeMinutes + " min " + uptimeSeconds + " sec");
 }
 
+function getFormatTime(time) {
+    var hours = Math.floor(time/60);
+    var second = (time % 60).toFixed(0);
+    console.log(hours + " hours " + minutes + "minutes" + seconds + "seconds.");
+}
+                
+exports.getFormatTime = time;
 exports.getUptime = getUptime;
