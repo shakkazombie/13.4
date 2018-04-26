@@ -8,4 +8,5 @@ function getFormatTime(time) {
     return hours + " hours " + minutes + " minutes " + seconds + " seconds.";
 }
 
+
 exports.print = getFormatTime;
