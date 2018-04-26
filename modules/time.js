@@ -1,12 +1,11 @@
-var os = require('os');
-process.stdin.setEncoding('utf8');
+function getFormatTime(time) {
+    var hours = Math.floor(time / 3600);
+    time %= 3600;
 
-function getUptime() {
-    var uptime = os.uptime();
-    var uptimeRounded = Math.round(uptime);
-    var uptimeMinutes = Math.floor(uptimeRounded / 60);
-    var uptimeSeconds = uptimeRounded - (uptimeMinutes * 60);
-    console.log('Uptime: ' + uptimeMinutes + " min " + uptimeSeconds + " sec");
+    var minutes = Math.floor(time / 60);
+    var seconds = (time % 60).toFixed(0);
+
+    return hours + " hours " + minutes + " minutes " + seconds + " seconds.";
 }
 
-exports.getUptime = getUptime;
+exports.print = getFormatTime;

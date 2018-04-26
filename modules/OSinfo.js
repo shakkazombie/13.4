@@ -1,4 +1,5 @@
 var os = require('os');
+var time = require('./time');
 
 
 function getOSinfo() {
@@ -10,12 +11,12 @@ function getOSinfo() {
     }
     var release = os.release();
     var cpu = os.cpus()[0].model;
-    var uptime = os.uptime();
+    var times = os.uptime();
     var userInfo = os.userInfo();
     console.log('System:', type);
     console.log('Release:', release);
     console.log('CPU model:', cpu);
-    // console.log('Uptime:', time.print(uptime)); //dlaczego ta instrukcja powoduje, nie wyświetla
+    console.log('Uptime:', time.print(times));
     console.log('User name:', userInfo.username);
     console.log('Home dir:', userInfo.homedir);
 }
