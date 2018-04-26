@@ -24,7 +24,6 @@ process.stdin.on('readable', function() {
                 break;
             case 'os':
                 os.print();
-                time.getUptime();
                 break;
             default:
                 process.stderr.write('Wrong instruction!\n');
